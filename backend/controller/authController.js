@@ -1,6 +1,6 @@
 import { hashPassword}  from "../helpers/authHelper.js"
 import userModel from "../models/userModel.js"
-
+import jwt from "jsonwebtoken"
 export const registerController = async (req, res) => {
   try {
     const { name, email, password, phone, address } = req.body;
@@ -54,5 +54,7 @@ export const registerController = async (req, res) => {
     });
   }
 };
+
+//LOGIN with POST request
 
 export default registerController
