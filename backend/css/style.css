@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+:root{
+    --bar-width:60px;
+    --bar-height:8px;
+    --hamburger-gap:6px:
+    --forground:#333;
+    --background:white;
+
+}
+
+.hamburger-manu::before,
+.hamburger-manu::after,
+.hamburger-manu input{
+content: "";
+width: var(--bar-width);
+height: var(--bar-height);
+
+}
