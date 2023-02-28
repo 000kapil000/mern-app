@@ -13,7 +13,7 @@ const App = () => {
 <Routes>
 <Route path='/' element={<HomePage/>}/>
 <Route path='/about' element={<About/>}/>
-<Route path='/contect' element={<Contect/>}/>
+<Route path='/contact' element={<Contect/>}/>
 <Route path='/policy' element={<Policy/>}/>
 <Route path='*' element={<Pagenotfound/>}/>
 
