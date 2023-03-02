@@ -3,7 +3,7 @@ import Layout from '../components/layout/Layout'
 import { BiMailSend, BiPhoneCall, BiSupport } from "react-icons/bi";
 const Contect = () => {
   return (
-    <Layout>
+    <Layout title={'contect pages '}>
     <div className="row contactus ">
       <div className="col-md-6 ">
         <img
