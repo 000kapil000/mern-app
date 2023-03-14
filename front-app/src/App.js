@@ -7,20 +7,17 @@ import Contect from './pages/Contect'
 import HomePage from './pages/HomePage'
 import Pagenotfound from './pages/Pagenotfound'
 import Policy from './pages/Policy'
-import { ToastContainer} from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
 <>
 <Routes>
-<Route path='/register' element={<Register/>}/>
 <Route path='/' element={<HomePage/>}/>
 <Route path='/about' element={<About/>}/>
 <Route path='/contact' element={<Contect/>}/>
 <Route path='/policy' element={<Policy/>}/>
 <Route path='*' element={<Pagenotfound/>}/>
-
+<Route path='/register' element={<Register/>}/>
 </Routes>
 </>
   )
