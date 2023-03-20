@@ -10,6 +10,7 @@ import Policy from './pages/Policy'
 import Login from './pages/Auth/Login'
 import Dashboard from './pages/user/Dashboard'
 import PrivateRoute from './components/Routes/Private'
+import Forgotpassword from './pages/Auth/Forgotpassword'
 const App = () => {
   return (
 <>
@@ -20,7 +21,7 @@ const App = () => {
 <Route path='/dashboard' element={<PrivateRoute/>}>
 <Route path='' element={<Dashboard/>}/>
 </Route>
-
+<Route path='/forgot-password' element={<Forgotpassword/>}/>
 <Route path='/contact' element={<Contect/>}/>
 <Route path='/policy' element={<Policy/>}/>
 <Route path='*' element={<Pagenotfound/>}/>
