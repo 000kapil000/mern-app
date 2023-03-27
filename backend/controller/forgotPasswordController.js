@@ -4,43 +4,42 @@ import userModel from "../models/userModel.js"
 
 const forgotPasswordController=async(req,res)=>{
 try {
-    const {email,question,newPassword}=req.body
+    const {email,newPassword,answer}=req.body
     if (!email) {
-        res.send(400).send({message:'Email is required'})
+        res.status(400).send({message:'Email is required'})
     }
     if (!answer) {
-        res.send(400).send({message:'answer is required'})
+        res.status(400).send({message:'answer is required'})
     }
     if (!newPassword) {
-        res.send(400).send({message:'New Password is required'})
+        res.status(400).send({message:'New Password is required'})
     }
   // check email and answer
   const user =await userModel.findOne({email,answer})
   //validation
   if (!user) {
-    return res.send(404).send({
+    return res.status(404).send({
         success:false,
         message:"wrong email or answer"
     })
   }
+  console.log(res);
   const hashed =await hashPassword(newPassword);
-  await userModel.findByIdAndDelete(user._id,{password:hashed});
+  await userModel.findByIdAndUpdate(user._id,{password:hashed});
   res.status(200).send({
       success:true,
       message:"Password Reset Successfully",
   });
-
-
+  console.log(res);
 } catch (error) {
-    console.log(err
-        );
-        res.status(500).send({
-            success:false,
-            message:"somthing went wrong",
-            error
-    })
-  }
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Something went wrong",
+      error,
+    });
+  } 
        
-}
-
+};
+  
 export default forgotPasswordController;

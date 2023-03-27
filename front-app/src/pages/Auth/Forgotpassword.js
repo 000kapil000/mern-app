@@ -15,7 +15,7 @@ const Forgotpassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/v1/auth/forgot-password", {
+      const res = await axios.post("/api/v1/auth/forgotpassword", {
         email,
         newpassword,
         answer,
@@ -52,6 +52,17 @@ const Forgotpassword = () => {
       </div>
       <div className="mb-3">
         <input
+          type="password"
+          value={newpassword}
+          onChange={(e) => setNewPassword(e.target.value)}
+          className="form-control"
+          id="exampleInputPassword1"
+          placeholder="Enter New Password"
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <input
           type="text"
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
@@ -61,17 +72,7 @@ const Forgotpassword = () => {
           required
         />
       </div>
-      <div className="mb-3">
-        <input
-          type="password"
-          value={newpassword}
-          onChange={(e) => setNewPassword(e.target.value)}
-          className="form-control"
-          id="exampleInputPassword1"
-          placeholder="Enter Your Password"
-          required
-        />
-      </div>
+      
     
       <button type="submit" className="btn btn-primary">
       Reset

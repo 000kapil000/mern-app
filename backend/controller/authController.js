@@ -3,7 +3,7 @@ import userModel from "../models/userModel.js"
 
 export const registerController = async (req, res) => {
   try {
-    const { name, email, password, phone, address } = req.body;
+    const { name, email, password, phone, address ,answer} = req.body;
     //validations
     if (!name) {
       return res.send({ error: "Name is Required" });
@@ -19,6 +19,9 @@ export const registerController = async (req, res) => {
     }
     if (!address) {
       return res.send({ error: "Address is Required" });
+    }
+    if (!answer) {
+      return res.send({ error: "Answer is Required" });
     }
     //check user
     const exisitingUser = await userModel.findOne({ email });
@@ -38,6 +41,7 @@ export const registerController = async (req, res) => {
       phone,
       address,
       password: hashedPassword,
+      answer
     }).save();
 
     res.status(201).send({

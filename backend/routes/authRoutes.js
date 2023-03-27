@@ -15,7 +15,7 @@ router.post('/register',registerController)
 //LOGIN POST
 router.post('/login',loginController)
 //forgot password
-router.post('/forgot-password',forgotPasswordController)
+router.post('/forgotpassword',forgotPasswordController)
 //test routes
 router.get('/test',requireSignIn,isAdmin,testController)
 export default router

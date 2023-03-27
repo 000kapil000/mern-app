@@ -21,7 +21,7 @@ const App = () => {
 <Route path='/dashboard' element={<PrivateRoute/>}>
 <Route path='' element={<Dashboard/>}/>
 </Route>
-<Route path='/forgot-password' element={<Forgotpassword/>}/>
+<Route path='/forgotpassword' element={<Forgotpassword/>}/>
 <Route path='/contact' element={<Contect/>}/>
 <Route path='/policy' element={<Policy/>}/>
 <Route path='*' element={<Pagenotfound/>}/>
